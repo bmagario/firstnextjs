@@ -24,10 +24,12 @@ export class ProductsService {
   update(id: string, name: string, description: string, price: number) {
     const { idx, product} = this.findIndex(id);
     this.products[idx] = { ...product, name, description, price };
+    return null;
   }
 
   delete(id: string) {
-    this.products = this.products.filter(product => product.id !== id)
+    this.products = this.products.filter(product => product.id !== id);
+    return null;
   }
 
   private findProduct(id: string): Product {
